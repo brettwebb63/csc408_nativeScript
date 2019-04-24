@@ -1,15 +1,15 @@
 <template>
     <Page>
-        <ActionBar :title="'Rentals for ' + movie_title" android:flat="true"/>
+        <ActionBar :title="'Customers that rented ' + movie_title" android:flat="true"/>
         <ListView for="rental in rentals" class="list-group" style="height:100%">
             <v-template>
-                <movie-rental-history :customer="customer"></movie-rental-history>
+                <movie-rental-history :rental="rental"></movie-rental-history>
             </v-template>
         </ListView>
     </Page>
 </template>
 <script>
-    function Customer ({id, name, email, pivot}) {
+    function Rental({id, name, email, pivot}) {
         this.id = parseInt(pivot.id)
         this.name = name
         this.email = email
@@ -22,7 +22,7 @@
         data() {
             return {
                 movie_title: '',
-                customers: []
+                rentals: []
             }
         },
         methods: {
@@ -32,8 +32,8 @@
                     this.movie_title = data[0].title;
                     console.log('Name is: ' + this.movie_title + '-------');
                     console.log(data[0]);
-                    data[0].customers.forEach(customer => {
-                        this.customers.push(new Customer(customer))
+                    data[0].rentals.forEach(rental => {
+                        this.rentals.push(new Rental(rental))
                     });
                 }, error => {
                     console.error(error);

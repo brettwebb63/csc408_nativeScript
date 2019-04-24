@@ -32,7 +32,7 @@
                 axios.get(url).then(({data}) => {
                     this.customer_name = data[0].name;
                     console.log('Name is: ' + this.customer_name + '-------');
-                    // console.log(data[0]);
+                    console.log(data[0]);
                     data[0].rentals.forEach(rental => {
                         this.rentals.push(new Rental(rental))
                     });
