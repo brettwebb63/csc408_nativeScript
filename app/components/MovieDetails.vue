@@ -27,7 +27,7 @@
         components: {
             MovieRentals
         },
-        movieMount() {
+        mounted() {
         }
     }
 </script>

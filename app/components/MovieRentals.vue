@@ -1,7 +1,7 @@
 <template>
     <Page>
         <ActionBar :title="'Rentals for ' + movie_title" android:flat="true"/>
-        <ListView for="customer in customers" class="list-group" style="height:100%">
+        <ListView for="rental in rentals" class="list-group" style="height:100%">
             <v-template>
                 <movie-rental-history :customer="customer"></movie-rental-history>
             </v-template>

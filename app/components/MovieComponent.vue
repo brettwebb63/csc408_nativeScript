@@ -24,7 +24,7 @@
         components: {
             MovieDetails
         },
-        movieMount() {
+        mounted() {
         }
     }
 </script>

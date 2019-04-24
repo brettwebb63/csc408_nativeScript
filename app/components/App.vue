@@ -52,17 +52,16 @@
         mounted() {
             axios.get("https://codeflare.tech/api/customers").then(result => {
                 result.data.forEach(customer => {
-                    console.log(result);
+                    console.log(customer.data);
                     this.customers.push(new Customer(customer));
                 })
-            }, error => {
+            },
+                error => {
                 console.error(error);
-            })
-        },
-        movieMount() {
+            }),
             axios.get("https://codeflare.tech/api/movies").then(result => {
                 result.data.forEach(movie => {
-                    console.log(result);
+                    console.log(movie.data);
                     this.movies.push(new Movie(movie));
                 })
             }, error => {
@@ -72,7 +71,22 @@
         components: {
             MovieComponent,
             CustomerComponent,
+
         }
+        /*movieMount() {
+            axios.get("https://codeflare.tech/api/movies").then(result => {
+                result.data.forEach(movie => {
+                    console.log(movie.data);
+                    this.movies.push(new Movie(movie));
+                })
+            }, error => {
+                console.error(error);
+            })
+        },
+        components: {
+            MovieComponent,
+            CustomerComponent,
+        }*/
     }
 </script>
 
