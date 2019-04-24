@@ -15,7 +15,7 @@
         },
         methods: {
             onTap: function () {
-                // console.log("Item with name: " + this.customer.name + " tapped");
+                console.log("Item with name: " + this.movie.title + " tapped");
                 this.$navigateTo(MovieRentals, {
                     props: {
                         id: this.movie.id

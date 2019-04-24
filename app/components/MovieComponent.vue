@@ -17,7 +17,7 @@
         methods: {
             onNameTap: function (args) {
                 console.log("Item with id: " + args.item.id + " tapped");
-                // console.log(args);
+                console.log(args);
             }
         },
         props: ['movies'],

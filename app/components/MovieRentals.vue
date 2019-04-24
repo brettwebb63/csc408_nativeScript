@@ -31,7 +31,7 @@
                 axios.get(url).then(({data}) => {
                     this.movie_title = data[0].title;
                     console.log('Name is: ' + this.movie_title + '-------');
-                    // console.log(data[0]);
+                    console.log(data[0]);
                     data[0].customers.forEach(customer => {
                         this.customers.push(new Customer(customer))
                     });

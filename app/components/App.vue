@@ -41,7 +41,7 @@
         data() {
             return {
                 customers: [],
-                movies: []
+                movies: [],
             }
         },
         methods: {
@@ -52,6 +52,7 @@
         mounted() {
             axios.get("https://codeflare.tech/api/customers").then(result => {
                 result.data.forEach(customer => {
+                    console.log(result);
                     this.customers.push(new Customer(customer));
                 })
             }, error => {
@@ -61,6 +62,7 @@
         movieMount() {
             axios.get("https://codeflare.tech/api/movies").then(result => {
                 result.data.forEach(movie => {
+                    console.log(result);
                     this.movies.push(new Movie(movie));
                 })
             }, error => {
@@ -68,8 +70,8 @@
             })
         },
         components: {
+            MovieComponent,
             CustomerComponent,
-            MovieComponent
         }
     }
 </script>
