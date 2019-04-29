@@ -1,12 +1,10 @@
 <template>
     <FlexboxLayout flexDirection="row" class="list-group-item">
-        <GridLayout columns="3*,7*" rows="*,*,*,*" width="100%" >
-            <Image :src="imageUrl" row="0" col="0" rowSpan="4"  class="thumbnail"/>
-
-            <Label :text="this.rental.name" row="0" col="1" class="label-text" />
-            <Label :text="this.rental.email" row="1" col="1" class="label-text" />
-            <Label :text="'Rented: ' + rented" row="2" col="1" class="label-text" />
-            <Label :text="'Returned: ' + returned" row="3" col="1" class="label-text" />
+        <GridLayout columns="5*,5*" rows="*,*" width="100%" >
+            <Label :text="this.rental.name" row="0" col="0" class="label-text" />
+            <Label :text="this.rental.email" row="1" col="0" class="label-text" />
+            <Label :text="'Rented: ' + rented" row="0" col="1" class="label-text" />
+            <Label :text="'Returned: ' + returned" row="1" col="1" class="label-text" />
         </GridLayout>
     </FlexboxLayout>
 </template>

@@ -1,10 +1,14 @@
 <template>
-    <GridLayout columns="*, *" rows="auto" width="100%">
-        <Label @onTap="onTap" :text="movie.title" row="0" col="0" class="list-group-item-heading label-text"
-               style="width: 60%"/>
-        <Label @onTap="onTap" :text="movie.length" row="0" col="1" class="list-group-item-heading label-text"
-               style="width: 60%"/>
-    </GridLayout>
+    <FlexboxLayout flexDirection="row" class="list-group-item">
+        <GridLayout columns="4*,6*" rows="*,*,*,*" width="100%" >
+            <Image @onTap="onTap" :src="imageUrl" row="0" col="0" rowSpan="4"  class="thumbnail" style="padding-right: 20px"/>
+
+            <Label @onTap="onTap" :text="movie.title" row="0" col="1" class="list-group-item-heading label-text" style="text-align: center"/>
+            <Label @onTap="onTap" :text="movie.rating" row="1" col="1" class="list-group-item-heading label-text" style="text-align: center"/>
+            <Label @onTap="onTap" :text="movie.length" row="2" col="1" class="list-group-item-heading label-text"style="text-align: center"/>
+            <Label @onTap="onTap" :text="movie.description" row="3" col="1" class="list-group-item-heading label-text"/>
+        </GridLayout>
+    </FlexboxLayout>
 </template>
 
 <script>
@@ -12,6 +16,12 @@
     export default {
         data() {
             return {}
+        },
+        computed: {
+            /* Build URL for image */
+            imageUrl: function(){
+                return "https://codeflare.tech/images/movie_" + this.movie.id + ".jpg";
+            }
         },
         methods: {
             onTap: function () {

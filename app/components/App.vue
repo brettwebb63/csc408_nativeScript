@@ -1,10 +1,10 @@
 <template>
     <Page>
         <ActionBar title="Welcome to Yellow Bucket!" android:flat="true"/>
-        <TabView tabBackgroundColor="#711537"
-                 androidSelectedTabHighlightColor="#ffffff"
-                 tabTextColor="#999999"
-                 selectedTabTextColor="#ffffff">
+        <TabView tabBackgroundColor="#8AAAE5"
+                 androidSelectedTabHighlightColor="#65580D"
+                 tabTextColor="#ffffff"
+                 selectedTabTextColor="#65580D">
             <TabViewItem title="Movies">
                 <movie-component :movies="movies"></movie-component>
             </TabViewItem>
@@ -30,10 +30,11 @@
         this.email = email;
         this.isAdmin = isAdmin
     }
-    function Movie({id, title,length, description}) {
+    function Movie({id, title,length, rating, description}) {
         this.id = parseInt(id);
         this.title = title;
-        this.length = length;
+        this.rating = rating;
+        this.length = length + " mins";
         this.description = description;
     }
 
